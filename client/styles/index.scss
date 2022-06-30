@@ -33,10 +33,17 @@ body {
 }
 
 .cardDiv {
-  background-color: darkblue;
+  background-color: #0330C3;
   width: 108px;
   height: 165px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 5px;
+  border-radius: 8px;
+  size: 200%;
+}
+
+.cardContainer {
+  display: flex;  
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: right; ///change to center when it doesn't conflict with form
+
 }
