@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
 
-// import stuff from './stuff'
+import carsReducer from './cars'
+
+const reducer = combineReducers({
+  cars: carsReducer,
+})
 
 export default combineReducers({
   // stuff
