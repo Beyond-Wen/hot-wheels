@@ -13,9 +13,30 @@ export default function AddCar() {
   const dispatch = useDispatch()
 
   function handleAdd(e) {
+    console.log(e)
+
+    // let modelName = e.target[0].value
+    // let imageUrl = e.target[1].value
+    // let Year = e.target[2].value
+    // let seriesName = e.target[3].value
+
+    // console.log(e.target[0].value)
+    // console.log(e.target[1].value)
+    // console.log(e.target[2].value)
+    // console.log(e.target[3].value)
+
     e.preventDefault()
+
+    // car data update
+    // carData.model_name = modelName
+    // carData.model_image = imageUrl
+    // carData.year = Year
+    // carData.series_id = seriesName
+
     console.log(carData)
     dispatch(addCar(carData))
+
+    // add car container
     setCarData('')
   }
 
