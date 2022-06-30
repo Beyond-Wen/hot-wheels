@@ -15,7 +15,7 @@ export const setCars = (cars) => {
 
 export const addCar = (carData) => {
   return (dispatch) => {
-    return api.addCar(carData).then(() => {
+    return api.postNewCar(carData).then(() => {
       dispatch(fetchCars())
     })
   }
