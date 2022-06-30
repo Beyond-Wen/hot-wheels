@@ -2,7 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { updateCar, delCar } from '../actions'
 
-export default function Card() {
+export default function Card(props) {
+  console.log(props)
   const dispatch = useDispatch()
 
   function handleDel() {
@@ -12,15 +13,25 @@ export default function Card() {
   return (
     <>
       <div className="cardDiv">
-        <div className="right"> year + series</div>
+        <div className="right">
+          {props.carInfo.year} : {props.carInfo.series_name}
+        </div>
         <div>
-          <img className="smallerPic" src="./images/bestlogo.png" alt="" />{' '}
+          <img
+            className="smallerPic"
+            src="./images/bestlogo.png"
+            alt="hot wheels logo"
+          />{' '}
         </div>
 
         <div>
-          <img className="smallerCar" src="./images/model3.png" alt="" />
+          <img
+            className="smallerCar"
+            src={props.carInfo.model_image}
+            alt="a hot wheels car"
+          />
         </div>
-        <div className="modelName"> model name</div>
+        <div className="modelName">{props.carInfo.model_name}</div>
         {/* put it here */}
         {/* <button onClick={() => handleDel()}>Delete</button> */}
       </div>

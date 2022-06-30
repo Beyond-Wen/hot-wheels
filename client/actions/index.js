@@ -38,7 +38,6 @@ export const fetchCars = () => {
     api
       .getAllCars()
       .then((cars) => {
-        console.log(cars)
         dispatch(setCars(cars))
       })
       .catch((err) => {

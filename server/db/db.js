@@ -5,11 +5,11 @@ const db = require('knex')(config)
 //write db functions here
 
 //gets
-function getAllCars(db) {
-  return db('cars').select()
+function getAllCars() {
+  return db('cars').join('series', 'cars.series_id', 'series.id').select()
 }
 
-function getAllCarsBySeries(id, db) {
+function getAllCarsBySeries(id) {
   return db('seriescars')
     .where('seriescars.series_id', id)
     .join('cars', 'car_id', 'cars.id')
@@ -19,7 +19,7 @@ function getAllCarsBySeries(id, db) {
 
 //posts
 
-function addNewCar(carObject, db) {
+function addNewCar(carObject) {
   //need to check if car exists before inserting (stretch)
   //connecting car_id and series_id
   //added id according to heroku instructions.
