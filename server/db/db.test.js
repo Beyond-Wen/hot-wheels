@@ -69,19 +69,3 @@ describe('addNewCar', () => {
 // beforeEach(() => {
 //   return testDb.seed.run()
 // })
-
-// describe('db.create', () => {
-//   test('creates a student with the name given', () => {
-//     expect.assertions(1)
-//     return create('bob', testDb).then((result) => {
-//       const [id] = result
-//       return testDb('students')
-//         .select()
-//         .where({ id })
-//         .first()
-//         .then((student) => {
-//           expect(student.name).toEqual('bob')
-//         })
-//     })
-//   })
-// })

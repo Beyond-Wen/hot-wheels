@@ -21,9 +21,9 @@ function getAllCarsBySeries(id) {
 
 function addNewCar(carObject) {
   //need to check if car exists before inserting (stretch)
-  return db('cars').insert(carObject).then()
+  //connecting car_id and series_id
+  return db('cars').insert(carObject)
 }
-//connecting car_id and series_id
 
 //update
 function updateCar(id, car) {
