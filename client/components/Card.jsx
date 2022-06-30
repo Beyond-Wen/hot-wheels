@@ -12,13 +12,17 @@ export default function Card() {
   return (
     <>
       <div className="cardDiv">
-        <div> year and series from form or db</div>
+        <div className="right"> year + series</div>
         <div>
-          <img src="" alt="" /> car image from form or db
+          <img className="smallerPic" src="./images/bestlogo.png" alt="" />{' '}
         </div>
-        <div> model name from form or db</div>
+
+        <div>
+          <img className="smallerCar" src="./images/model3.png" alt="" />
+        </div>
+        <div className="modelName"> model name</div>
         {/* put it here */}
-        <button onClick={() => handleDel()}>Delete</button>
+        {/* <button onClick={() => handleDel()}>Delete</button> */}
       </div>
     </>
   )

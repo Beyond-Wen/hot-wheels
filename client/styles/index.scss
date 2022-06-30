@@ -35,8 +35,8 @@ body {
 .cardDiv {
   // background-color: #0330C3;
   background-image: linear-gradient(#036fd5,#0026a3);
-  width: 108px;
-  height: 165px;
+  width: 216px;
+  height: 330px;
   border-radius: 8px;
   size: 200%;
 }
@@ -45,7 +45,32 @@ body {
   display: flex;  
   flex-wrap: wrap;
   flex-direction:row;
-  justify-content: right; ///change to center when it doesn't conflict with form
-
+  justify-content: space-between;
+  justify-content:space-around;
 }
 
+.smallerPic {
+  width: 213px;
+  height: 40;
+  margin: 2px;
+}
+
+.right {
+  text-align: right;
+}
+
+.modelName {
+  text-align: center;
+    bottom: 0;
+    right: 0;
+    line-height: 10;
+}
+
+.centered {
+  text-align: center;
+}
+
+.smallerCar {
+  width: 216px;
+  height: auto;
+}
