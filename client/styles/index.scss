@@ -33,7 +33,8 @@ body {
 }
 
 .cardDiv {
-  background-color: #0330C3;
+  // background-color: #0330C3;
+  background-image: linear-gradient(#036fd5,#0026a3);
   width: 108px;
   height: 165px;
   border-radius: 8px;
@@ -47,3 +48,4 @@ body {
   justify-content: right; ///change to center when it doesn't conflict with form
 
 }
+
