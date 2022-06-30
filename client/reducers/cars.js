@@ -1,4 +1,4 @@
-const initialCarState = ['']
+const initialCarState = ['Mario Cart', 'Toyota']
 
 const carsReducer = (state = initialCarState, action) => {
   const { type, payload } = action
