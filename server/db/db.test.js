@@ -32,11 +32,33 @@ describe('getAllCarsBySeries', () => {
   })
 })
 
-//POST
-describe('addNewCar', () => {
-  test.todo('this function should add a car into the db')
-})
+// //POST
+// describe('addNewCar', () => {
+//   test.todo('this function should add a car into the db')
+// })
 
-//update
+// //PATCH? (PUT)
+// describe('updateCar', () => {
+//   test.todo('this function should modify a car in the db')
+// })
 
-//delete
+// //DEL
+// describe('delCar', () => {
+//   test.todo('this function should delete a car in the db')
+// })
+
+// describe('db.create', () => {
+//   test('creates a student with the name given', () => {
+//     expect.assertions(1)
+//     return create('bob', testDb).then((result) => {
+//       const [id] = result
+//       return testDb('students')
+//         .select()
+//         .where({ id })
+//         .first()
+//         .then((student) => {
+//           expect(student.name).toEqual('bob')
+//         })
+//     })
+//   })
+// })

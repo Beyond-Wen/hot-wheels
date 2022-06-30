@@ -15,8 +15,23 @@ function getAllCarsBySeries(id) {
     .select()
 }
 
+function addNewCar(car) {
+  return db('cars').insert(car)
+}
+
+function updateCar(id, car) {
+  return db('cars').where('id', id).update(car)
+}
+
+function deleteCar(id) {
+  return db('cars').where('id', id).del()
+}
+
 module.exports = {
   db,
   getAllCars,
   getAllCarsBySeries,
+  addNewCar,
+  updateCar,
+  deleteCar,
 }
