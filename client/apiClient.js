@@ -13,4 +13,17 @@ export function getAllCars() {
     })
 }
 
+export function postNewCar(data) {
+  return request
+    .post(`${url}addcar`)
+    .send(data)
+    .set('Accept', 'application/json')
+    .then((response) => {
+      console.log('yay got ' + JSON.stringify(response.body))
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
 //post function
