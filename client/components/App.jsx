@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from './Header'
-import Car from './Car'
 import Card from './Card'
 import AddCar from './AddCar'
 import * as actions from '../actions'
@@ -14,7 +13,9 @@ function App() {
     dispatch(actions.fetchCars())
   }, [])
 
-  console.log(data)
+  const carCard = data.map((car, id) => {
+    return <Card key={id} carInfo={car} />
+  })
 
   // if (loading) {
   //   return <div>Loading...</div>
@@ -26,25 +27,12 @@ function App() {
   return (
     <>
       <Header />
-      <p></p>
+      <br />
+      <br />
       <AddCar />
-      <p></p>
-      <Car />
-      <p></p>
-      <div className="cardContainer">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <br />
+      <br />
+      <div className="cardContainer">{carCard}</div>
     </>
   )
 }
