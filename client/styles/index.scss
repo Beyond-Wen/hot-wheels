@@ -1,7 +1,5 @@
 // Write all CSS in here!!!
 
-
-
 body {
   background-color: #0391D5;
   position: absolute;
@@ -12,14 +10,40 @@ body {
   
 }
 
-
-
 .title {
-  font: 34px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Ramabhadra', sans-serif;
+  font: 34px;
+  text-align: center;
   color: #EC1A15;
  
 } 
 
+
 .header {
-  
+  display: flex;
+  align-items: center;
+  height: 65px;
+  color: #EC1A15;
+  padding: 20px;
+}
+
+.headerImage {
+  width: 180px;
+  height: 180px;
+}
+
+.cardDiv {
+  background-color: #0330C3;
+  width: 108px;
+  height: 165px;
+  border-radius: 8px;
+  size: 200%;
+}
+
+.cardContainer {
+  display: flex;  
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: right; ///change to center when it doesn't conflict with form
+
 }
