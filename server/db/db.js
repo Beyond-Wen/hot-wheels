@@ -3,6 +3,8 @@ const config = require('./knexfile')[environment]
 const db = require('knex')(config)
 
 //write db functions here
+
+//gets
 function getAllCars() {
   return db('cars').select()
 }
@@ -15,10 +17,15 @@ function getAllCarsBySeries(id) {
     .select()
 }
 
-function addNewCar(car) {
-  return db('cars').insert(car)
-}
+//posts
 
+function addNewCar(carObject) {
+  //need to check if car exists before inserting (stretch)
+  return db('cars').insert(carObject).then()
+}
+//connecting car_id and series_id
+
+//update
 function updateCar(id, car) {
   return db('cars').where('id', id).update(car)
 }

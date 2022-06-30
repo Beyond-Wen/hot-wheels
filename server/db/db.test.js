@@ -2,7 +2,7 @@ const config = require('./knexfile')
 const knex = require('knex')
 const testDb = knex(config.test)
 
-const { db, getAllCars, getAllCarsBySeries } = require('./db')
+const { db, getAllCars, getAllCarsBySeries, addNewCar } = require('./db')
 
 //get it to pristine
 beforeAll(() => {
@@ -16,7 +16,6 @@ beforeEach(() => {
 describe('getAllCars', () => {
   test('this function should pull all the cars out of the db', () => {
     return getAllCars().then((result) => {
-      // console.log(result)
       expect(result).toHaveLength(6)
     })
   })
@@ -33,9 +32,26 @@ describe('getAllCarsBySeries', () => {
 })
 
 // //POST
-// describe('addNewCar', () => {
-//   test.todo('this function should add a car into the db')
-// })
+describe('addNewCar', () => {
+  test('this function should add a car into the db', () => {
+    const testObject = {
+      model_name: 'Mercedes Benz',
+      model_image: 'link',
+      series_id: 3,
+      year: 2019,
+    }
+    expect.assertions(1)
+    return addNewCar(testObject).then(() => {
+      return db('cars')
+        .select()
+        .then((cars) => {
+          console.log(cars)
+          const lastCar = cars[cars.length - 1]
+          expect(lastCar.model_name).toBe('Mercedes Benz')
+        })
+    })
+  })
+})
 
 // //PATCH? (PUT)
 // describe('updateCar', () => {
@@ -45,6 +61,13 @@ describe('getAllCarsBySeries', () => {
 // //DEL
 // describe('delCar', () => {
 //   test.todo('this function should delete a car in the db')
+// })
+
+// beforeAll(() => {
+//   return testDb.migrate.latest()
+// })
+// beforeEach(() => {
+//   return testDb.seed.run()
 // })
 
 // describe('db.create', () => {
