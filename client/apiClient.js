@@ -12,3 +12,5 @@ export function getAllCars() {
       console.log(err)
     })
 }
+
+//post function
