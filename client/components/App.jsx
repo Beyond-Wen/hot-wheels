@@ -21,9 +21,23 @@ function App() {
   return (
     <>
       <Header />
+      <p></p>
       <AddCar />
+      <p></p>
       <Car />
+      <p></p>
       <div className="cardContainer">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
         <Card />
       </div>
     </>

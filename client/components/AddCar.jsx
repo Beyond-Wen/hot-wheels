@@ -31,7 +31,7 @@ export default function AddCar() {
 
   return (
     <>
-      <div>
+      <div className="centered">
         <form onSubmit={handleAdd}>
           <label htmlFor="newCar">Add a new car to the collection</label>
           <input
