@@ -2,7 +2,7 @@ const config = require('./knexfile')
 const knex = require('knex')
 const testDb = knex(config.test)
 
-const { db, getAllCars, getAllCarsBySeries } = require('./db')
+const { db, getAllCars, getAllCarsBySeries, addNewCar } = require('./db')
 
 //get it to pristine
 beforeAll(() => {
@@ -16,7 +16,6 @@ beforeEach(() => {
 describe('getAllCars', () => {
   test('this function should pull all the cars out of the db', () => {
     return getAllCars().then((result) => {
-      // console.log(result)
       expect(result).toHaveLength(6)
     })
   })
@@ -32,11 +31,57 @@ describe('getAllCarsBySeries', () => {
   })
 })
 
-//POST
+// //POST
 describe('addNewCar', () => {
-  test.todo('this function should add a car into the db')
+  test('this function should add a car into the db', () => {
+    const testObject = {
+      model_name: 'Mercedes Benz',
+      model_image: 'link',
+      series_id: 3,
+      year: 2019,
+    }
+    expect.assertions(1)
+    return addNewCar(testObject).then(() => {
+      return db('cars')
+        .select()
+        .then((cars) => {
+          console.log(cars)
+          const lastCar = cars[cars.length - 1]
+          expect(lastCar.model_name).toBe('Mercedes Benz')
+        })
+    })
+  })
 })
 
-//update
+// //PATCH? (PUT)
+// describe('updateCar', () => {
+//   test.todo('this function should modify a car in the db')
+// })
 
-//delete
+// //DEL
+// describe('delCar', () => {
+//   test.todo('this function should delete a car in the db')
+// })
+
+// beforeAll(() => {
+//   return testDb.migrate.latest()
+// })
+// beforeEach(() => {
+//   return testDb.seed.run()
+// })
+
+// describe('db.create', () => {
+//   test('creates a student with the name given', () => {
+//     expect.assertions(1)
+//     return create('bob', testDb).then((result) => {
+//       const [id] = result
+//       return testDb('students')
+//         .select()
+//         .where({ id })
+//         .first()
+//         .then((student) => {
+//           expect(student.name).toEqual('bob')
+//         })
+//     })
+//   })
+// })
