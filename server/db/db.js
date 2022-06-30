@@ -22,7 +22,8 @@ function getAllCarsBySeries(id) {
 function addNewCar(carObject) {
   //need to check if car exists before inserting (stretch)
   //connecting car_id and series_id
-  return db('cars').insert(carObject)
+  //added id according to heroku instructions.
+  return db('cars').insert(carObject, 'id')
 }
 
 //update
