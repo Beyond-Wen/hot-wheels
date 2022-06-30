@@ -6,6 +6,8 @@ const reducer = combineReducers({
   cars: carsReducer,
 })
 
-export default combineReducers({
-  // stuff
-})
+// export default combineReducers({
+//   // stuff
+// })
+
+export default reducer

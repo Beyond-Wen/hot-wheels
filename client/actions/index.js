@@ -1,5 +1,5 @@
 export const ADD_CAR = 'ADD_CAR'
-export const DEL_Car = 'DEL_CAR'
+export const DEL_CAR = 'DEL_CAR'
 export const UPDATE_CAR = 'UPDATE_CAR'
 
 export const addCar = (Car) => {
