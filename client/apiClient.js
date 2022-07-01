@@ -5,7 +5,7 @@ export function getAllCars() {
   return request
     .get(url)
     .then((response) => {
-      console.log(response.body)
+      // console.log(response.body)
       const cars = response.body
       return cars
     })

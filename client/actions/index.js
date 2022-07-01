@@ -65,5 +65,3 @@ export const fetchCars = () => {
 //       setLoading(false)
 //     })
 // }, [])
-
-export const fetchCar = () => {}
