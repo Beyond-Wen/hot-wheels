@@ -29,7 +29,7 @@ export function postNewCar(data) {
 
 //post function
 export function deleteCar(id) {
-  console.log(id)
+  // console.log(id)
   return request
     .del(`${url}deletecar`)
     .send({ id })

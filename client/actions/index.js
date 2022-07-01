@@ -22,7 +22,7 @@ export const addCar = (carData) => {
 }
 
 export const delCar = (id) => {
-  console.log(id)
+  // console.log(id)
   return (dispatch) => {
     return api.deleteCar(id).then(() => {
       //api call
