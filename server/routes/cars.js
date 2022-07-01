@@ -38,4 +38,16 @@ router.post('/addcar', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+router.delete('/deletecar', (req, res) => {
+  console.log(req.body)
+  db.deleteCar(req.body)
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 module.exports = router
