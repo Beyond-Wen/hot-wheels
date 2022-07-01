@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { delCar } from '../actions/index'
 
 export default function Card(props) {
-  console.log('props are here', props)
+  // console.log('props are here', props)
   const dispatch = useDispatch()
 
   function handleDel(e, id) {
