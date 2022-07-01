@@ -1,13 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { updateCar, delCar } from '../actions'
+import { delCar } from '../actions/index'
 
 export default function Card(props) {
   console.log(props)
   const dispatch = useDispatch()
 
-  function handleDel() {
-    dispatch(delCar())
+  function handleDel(e, id) {
+    e.preventDefault()
+    console.log(id)
+    dispatch(delCar(id))
   }
 
   return (
@@ -30,10 +32,12 @@ export default function Card(props) {
             src={props.carInfo.model_image}
             alt="a hot wheels car"
           />
+          <button onClick={(e) => handleDel(e, props.carInfo.car_id)}>
+            Delete
+          </button>
         </div>
         <div className="modelName">{props.carInfo.model_name}</div>
         {/* put it here */}
-        {/* <button onClick={() => handleDel()}>Delete</button> */}
       </div>
     </>
   )

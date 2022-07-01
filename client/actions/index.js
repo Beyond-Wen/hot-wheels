@@ -21,14 +21,15 @@ export const addCar = (carData) => {
   }
 }
 
-// export const deleteCar = (id) => {
-//   return (dispatch) => {
-//     return API.deleteCar(id).then(() => {
-//       //api call
-//       dispatch(fetchCars()) //handles how to re-render your state after the api function is don
-//     })
-//   }
-// }
+export const delCar = (id) => {
+  console.log(id)
+  return (dispatch) => {
+    return api.deleteCar(id).then(() => {
+      //api call
+      dispatch(fetchCars()) //handles how to re-render your state after the api function is don
+    })
+  }
+}
 
 export const setCarLoading = () => {}
 

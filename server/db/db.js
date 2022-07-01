@@ -6,7 +6,9 @@ const db = require('knex')(config)
 
 //gets
 function getAllCars() {
-  return db('cars').join('series', 'cars.series_id', 'series.id').select()
+  return db('cars')
+    .join('series', 'cars.series_id', 'series.id')
+    .select('*', 'cars.id as car_id')
 }
 
 function getAllCarsBySeries(id) {
@@ -32,6 +34,7 @@ function updateCar(id, car) {
 }
 
 function deleteCar(id) {
+  console.log(id)
   return db('cars').where('id', id).del()
 }
 

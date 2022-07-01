@@ -5,6 +5,7 @@ export function getAllCars() {
   return request
     .get(url)
     .then((response) => {
+      console.log(response.body)
       const cars = response.body
       return cars
     })
@@ -27,3 +28,16 @@ export function postNewCar(data) {
 }
 
 //post function
+export function deleteCar(id) {
+  console.log(id)
+  return request
+    .del(`${url}deletecar`)
+    .send(id)
+    .set('Accept', 'application/json')
+    .then((response) => {
+      console.log('delete successful')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
