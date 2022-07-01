@@ -8,7 +8,7 @@ export default function Card(props) {
 
   function handleDel(e, id) {
     e.preventDefault()
-    console.log(id)
+    console.log('id', id)
     dispatch(delCar(id))
   }
 

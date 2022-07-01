@@ -32,7 +32,7 @@ export function deleteCar(id) {
   console.log(id)
   return request
     .del(`${url}deletecar`)
-    .send(id)
+    .send({ id })
     .set('Accept', 'application/json')
     .then((response) => {
       console.log('delete successful')
