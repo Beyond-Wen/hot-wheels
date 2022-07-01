@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux'
 import { delCar } from '../actions/index'
 
 export default function Card(props) {
-  console.log(props)
+  console.log('props are here', props)
   const dispatch = useDispatch()
 
   function handleDel(e, id) {
     e.preventDefault()
-    console.log(id)
+    // console.log('id', id)
     dispatch(delCar(id))
   }
 

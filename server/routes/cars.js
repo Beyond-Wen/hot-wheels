@@ -40,7 +40,7 @@ router.post('/addcar', (req, res) => {
 })
 
 router.delete('/deletecar', (req, res) => {
-  console.log(req.body)
+  console.log('req.body is', req.body)
   db.deleteCar(req.body)
     .then(() => {
       res.sendStatus(200)

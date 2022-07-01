@@ -15,7 +15,7 @@ beforeEach(() => {
 //GET
 describe('getAllCars', () => {
   test('this function should pull all the cars out of the db', () => {
-    return getAllCars().then((result) => {
+    return getAllCars(testDb).then((result) => {
       console.log(result)
       expect(result).toHaveLength(6)
     })

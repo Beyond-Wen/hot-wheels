@@ -28,14 +28,14 @@ function addNewCar(carObject) {
   return db('cars').insert(carObject, 'id')
 }
 
-//update
+// update
 function updateCar(id, car) {
   return db('cars').where('id', id).update(car)
 }
 
 function deleteCar(id) {
-  console.log(id)
-  return db('cars').where('id', id).del()
+  // console.log('db id', id.id)
+  return db('cars').where('id', id.id).del()
 }
 
 module.exports = {
