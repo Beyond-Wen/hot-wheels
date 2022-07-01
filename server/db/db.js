@@ -35,7 +35,7 @@ function updateCar(id, car) {
 
 function deleteCar(id) {
   console.log('db id', id.id)
-  return db('cars').where(id.id).del()
+  return db('cars').where('id', id.id).del()
 }
 
 module.exports = {
