@@ -6,16 +6,16 @@ const { db, getAllCars, getAllCarsBySeries, addNewCar } = require('./db')
 
 //get it to pristine
 beforeAll(() => {
-  return testDb.migrate.latest()
+  return db.migrate.latest()
 })
 beforeEach(() => {
-  return testDb.seed.run()
+  return db.seed.run()
 })
 
 //GET
 describe('getAllCars', () => {
   test('this function should pull all the cars out of the db', () => {
-    return getAllCars(testDb).then((result) => {
+    return getAllCars().then((result) => {
       console.log(result)
       expect(result).toHaveLength(6)
     })
@@ -24,7 +24,7 @@ describe('getAllCars', () => {
 
 describe('getAllCarsBySeries', () => {
   test('this function should pull all the series with their cars out of the db', () => {
-    return getAllCarsBySeries(1, testDb).then((result) => {
+    return getAllCarsBySeries(1).then((result) => {
       expect(result).toHaveLength(2)
       expect(result[0].model_name).toBe('Tour de Fast')
       expect(result[0].series_name).toBe('Sporty Sportscars')
@@ -42,8 +42,8 @@ describe('addNewCar', () => {
       year: 2019,
     }
     expect.assertions(1)
-    return addNewCar(testObject, testDb).then(() => {
-      return testDb('cars')
+    return addNewCar(testObject).then(() => {
+      return db('cars')
         .select()
         .then((cars) => {
           console.log(cars)
